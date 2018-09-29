@@ -1,0 +1,41 @@
+[                                              
+{                                              
+    "model": "news.news",                      
+    "pk": 1,                                   
+    "fields": {                                
+        "title": "Car Exhibition",             
+        "status": "draft",                     
+        "created": "2018-09-29T13:48:16.778Z", 
+        "modified": "2018-09-29T13:48:16.778Z",
+        "topics": [                            
+            1                                  
+        ]                                      
+    }                                          
+},                                             
+{                                              
+    "model": "news.news",                      
+    "pk": 2,                                   
+    "fields": {                                
+        "title": "Perfume Exhibition",         
+        "status": "publish",                   
+        "created": "2018-09-29T13:48:48.791Z", 
+        "modified": "2018-09-29T13:48:48.791Z",
+        "topics": [                            
+            2                                  
+        ]                                      
+    }                                          
+},                                             
+{                                              
+    "model": "news.news",                      
+    "pk": 3,                                   
+    "fields": {                                
+        "title": "Food Exhibition",         
+        "status": "deleted",                   
+        "created": "2018-09-29T13:48:48.791Z", 
+        "modified": "2018-09-29T13:48:48.791Z",
+        "topics": [                            
+            3                                  
+        ]                                      
+    }                                          
+}                                              
+]                                              

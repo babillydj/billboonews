@@ -1,0 +1,29 @@
+[
+    {
+        "model": "topics.topics",
+        "pk": 1,
+        "fields": {
+            "title": "Car",
+            "created": "2018-09-29T13:42:01.136Z",
+            "modified": "2018-09-29T13:42:01.137Z"
+        }
+    },
+    {
+        "model": "topics.topics",
+        "pk": 2,
+        "fields": {
+            "title": "Perfume",
+            "created": "2018-09-29T13:42:14.405Z",
+            "modified": "2018-09-29T13:42:14.405Z"
+        }
+    },
+    {
+        "model": "topics.topics",
+        "pk": 3,
+        "fields": {
+            "title": "Festival",
+            "created": "2018-09-29T13:42:14.405Z",
+            "modified": "2018-09-29T13:42:14.405Z"
+        }
+    }
+]

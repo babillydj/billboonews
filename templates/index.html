@@ -1,0 +1,115 @@
+{% load static %}
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+<body>
+  <header>
+    <h1>Billboo News</h1>
+  </header>
+  <div class=table-wrapper>
+    <span class='note-table'> 
+
+      note: for actions link please click action button in redirected tab Django
+      Rest API Framework (example: after click Edit button please click 
+      PUT, PATCH, or DELETE button in redirected tab, after click Delete button
+      please click DELETE button in redirected tab)
+    </span>
+    <span class='title'> News Table </span>
+    <table>
+      <thead>
+        <tr>
+          <th> ID </th>
+          <th> Title </th>
+          <th> Status </th>
+          <th> Topics </th>
+          <th class='actions'> Actions Button API </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for entry in news %}
+        <tr>
+          <td> {{ entry.id }} </td>
+          <td> {{ entry.title }} </td>
+          <td> {{ entry.status }} </td>
+          <td> 
+          {% for topic in entry.topics.all %}
+            {{ topic }},  
+          {% endfor %}
+          </td>
+          <td class='actions'>
+            {% comment %} <button>Edit</button>
+            <button>Delete</button> {% endcomment %}
+            <a class='link' target="_newtab" href="{% url 'news:api:detail' entry.id %}">Edit</a>
+            <a class='link' target="_newtab" href="{% url 'news:api:delete_status' entry.id %}">Delete Status</a>
+            <a class='link' target="_newtab" href="{% url 'news:api:delete_data' entry.id %}">Delete Data</a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <span class='note-table'> 
+      note:after click Manage button please click PUT, PATCH, or DELETE button in redirected tab
+    </span>
+    <span class='title'> Topics Table </span>
+    <table>
+      <thead>
+        <tr>
+          <th> ID </th>
+          <th> Title </th>
+          <th class='actions'> Actions Button API </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for entry in topics %}
+        <tr>
+          <td> {{ entry.id }} </td>
+          <td> {{ entry.title }} </td>
+          <td class='actions'>
+            <a class='link' target="_newtab" href="{% url 'topics:api:detail' entry.id %}">Manage</a>
+            <a class='link' target="_newtab" href="{% url 'news:api:list' %}?topics={{entry.id}}">Filter news by this topic</a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class='api'>
+    <div class='news'>
+      <span class='title'> News </span>
+      <div class='links'>
+        <div class='api-link'>
+          <span> for UPDATE DELETE news API is available in table above, please click actions buttons in table above </span>
+        </div>
+        <div class='api-link'>
+          <span> for create news API click link below </span>
+          <span> example body data: {"title": "create new", "status": "draft", "topics": [1]} </span>
+          <a class='list' target="_newtab" href="{% url 'news:api:list' %}">create news API</a>
+        </div>
+        <div class='api-link'>
+          <span> for filter list API click link below </span>
+          <span> parameter query '?status="draft or publish or deleted"' </span>
+          <a class='list' target="_newtab" href="{% url 'news:api:list' %}?status=draft">filter draft API</a>
+          <a class='list' target="_newtab" href="{% url 'news:api:list' %}?status=publish">filter publish API</a>
+          <a class='list' target="_newtab" href="{% url 'news:api:list' %}?status=deleted">filter deleted API</a>
+        </div>
+        <div class='api-link'>
+          <span> parameter query '?topics="topic_id"' in this link topic_id = 1 </span>
+          <a class='list' target="_newtab" href="{% url 'news:api:list' %}?topics=1">filter topics API</a>
+        </div>
+      </div>
+    </div>
+    <div class='topics'>
+      <span class='title'> Topics </span>
+      <div class='links'>
+        <div class='api-link'>
+          <span> for UPDATE DELETE topics API is available in table above, please click actions buttons in table above </span>
+        </div>
+        <div class='api-link'>
+          <span> for create topics API click link below </span>
+          <span> example body data: {"title": "create new"} </span>
+          <a class='list' target="_newtab" href="{% url 'topics:api:list' %}">create topics API</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
