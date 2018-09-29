@@ -1,1 +1,1 @@
-web: python manage.py migrate & python manage.py loaddata topics.json & python manage.py loaddata news.json & python manage.py runserver 0.0.0.0:$PORT & wait -n
+web: python manage.py migrate & python manage.py runserver 0.0.0.0:$PORT & wait -n
