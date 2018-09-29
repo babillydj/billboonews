@@ -4,11 +4,11 @@ run the following commands line below:
 pip install requirements.txt
 
 # create initial db.SQLite3
-python manage.py makemigrations
+python manage.py makemigrations <br/>
 python manage.py migrate
 
 # load initial data
-python manage.py loaddata topics.json
+python manage.py loaddata topics.json <br/>
 python manage.py loaddata news.json
 
 # run server (you can open it in local browser https://localhost:8000)
