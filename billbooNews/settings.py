@@ -25,7 +25,11 @@ SECRET_KEY = '3iy5lr2kv_d$+92#akr6^ibp@+5s(gp*yl4m-xm!-spuo8+spo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'billboonews.herokuapp.com',
+    '.localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
