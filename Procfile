@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn billboonews.wsgi --log-level=info --log-file -
+web: gunicorn billbooNews.wsgi --log-level=info --log-file -
