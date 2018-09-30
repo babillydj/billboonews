@@ -36,8 +36,6 @@
           {% endfor %}
           </td>
           <td class='actions'>
-            {% comment %} <button>Edit</button>
-            <button>Delete</button> {% endcomment %}
             <a class='link' target="_newtab" href="{% url 'news:api:detail' entry.id %}">Edit</a>
             <a class='link' target="_newtab" href="{% url 'news:api:delete_status' entry.id %}">Delete Status</a>
             <a class='link' target="_newtab" href="{% url 'news:api:delete_data' entry.id %}">Delete Data</a>
