@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: python manage.py runserver 0.0.0.0:$PORT
+web: gunicorn billboonews.wsgi --log-level=info --log-file -
